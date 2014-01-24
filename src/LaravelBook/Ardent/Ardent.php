@@ -530,10 +530,10 @@ abstract class Ardent extends Model {
 				// otherwise set the new ones
 				$this->validationErrors = $validator->messages();
 
-				// stash the input to the current session
-				// if (!self::$externalValidator && Input::hasSessionStore()) {
-				// 	Input::flash();
-				// }
+				stash the input to the current session
+				if (!self::$externalValidator && Input::hasSession()) {
+					Input::flash();
+				}
 			}
 		}
 
